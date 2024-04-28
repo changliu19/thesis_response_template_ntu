@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{Response}
+
+\graphicspath{%
+	{./Pictures/}%
+	{./Figures/}%
+}
+
+% \usepackage{times}
+
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{color,soul}               % highlighting text
+\usepackage{enumerate}
+
+\authors{Author Name} % Your name
+\degree{Doctor of Philosophy} % Your degree name
+\thesistitle{The Thesis Title} % Your thesis title
+\dates{1 Jan 2024} % The date of your response
+\signpath{Styles/signature.png} % Path to your signature
+
+\begin{document}
+
+\setstretch{1.2} % Line spacing of 1.2
+
+% ------------------------ Examiner 1 ------------------------
+
+\makeResponseTitle
+
+\noindent\textbf{Reply to Examiner No.\theexaminer:} \medskip
+
+Thank you for your comments!
+
+\question \label{e1:q:x} \verb|\question| and \verb|\answer| are used to create questions and answers.
+\answer \label{e1:a:x} My answer to Q.\ref{e1:q:x} will be A.\ref{e1:a:x}.
+
+\question[3-100][100] How to answer many many questions at once? 
+\answer[3-100][100] \label{e1:a:many} \verb|\question[3-100][100]| \verb|\answer[3-100][100]| will create question and answer with number 3-100 and set the ending number to 100.
+
+\question \lipsum[1]
+\answer \label{e1:a:long} \lipsum[1-2]
+
+\question The last question.
+\answer The answer can be found in A.\ref{e1:a:many} and A.\ref{e1:a:long}.
+
+\makeResponseEnd
+
+% ------------------------ Examiner 3 ------------------------
+
+\makeResponseTitle[3]
+
+\noindent\textbf{Reply to Examiner No.\theexaminer:} \medskip
+
+Manually specify the examiner number using \verb|\makeResponseTitle[x]|. Question numbers will be reset.
+
+\question The first question.
+\answer My answer.
+
+\question \label{e3:q:x} The second question.
+\answer \label{e3:a:x} My answer to Q.\ref{e3:q:x} will be A.\ref{e3:a:x}.
+
+\makeResponseEnd
+
+% ------------------------ Examiner 4 ------------------------
+
+\makeResponseTitle
+
+\noindent\textbf{Reply to Examiner No.\theexaminer:} \medskip
+
+\question The question.
+\answer My answer.
+
+\makeResponseEnd
+
+\end{document}
